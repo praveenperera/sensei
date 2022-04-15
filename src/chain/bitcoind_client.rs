@@ -75,7 +75,7 @@ pub enum Target {
     HighPriority,
 }
 
-impl BlockSource for &BitcoindClient {
+impl BlockSource for BitcoindClient {
     fn get_header<'a>(
         &'a self,
         header_hash: &'a BlockHash,
