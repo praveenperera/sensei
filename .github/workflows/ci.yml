@@ -25,7 +25,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: "16"
-      - run: cd web-admin && npm install && npm run build
+      - run: cd web-admin && npm install && CI=false npm run build
 
   clippy:
     needs: build_web_admin
@@ -98,6 +98,7 @@ jobs:
 
   macos:
     runs-on: macos-latest
+    needs: build_web_admin
     strategy:
       fail-fast: true
       matrix:

@@ -41,7 +41,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: "16"
-      - run: cd web-admin && npm install && npm run build
+      - run: cd web-admin && npm install && CI=false npm run build
 
   windows:
     runs-on: windows-latest
